@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <title>Daisy Soundboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Annoy your favorite Guthykins during any time with a simple and easy to use Guthykins soundboard!">
+    <style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    font-family: sans-serif;
+}
+h1 { display: none; }
+img {
+    width: 400px;
+    max-width: 100vw;
+}
+button {
+    width: 180px;
+    height: 60px;
+    margin: 10px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+button:nth-child(1), button:nth-child(6) { background-color: #18d748; }
+button:nth-child(2) { background-color: #e03813; }
+button:nth-child(3) { background-color: #3393FF; }
+button:nth-child(4) { background-color: #F2740B; }
+button:nth-child(5) { background-color: #0BF217; }
+button:nth-child(6) { background-color: #E83110; }
+button:nth-child(7) { background-color: #DFEB3F; }
+button:nth-child(8) { background-color: #F20BD7; }
+
+.banner {
+    position: absolute;
+    top: 40px;
+    left: -70px;
+    padding: 10px;
+    color: white;
+    background: #175f7e;
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    transform: rotate(-45deg);
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daisy Soundboard</h1>
+        <img src="logo3.png" alt="daisy logo">
+    </header>
+    <main>
+        <!-- Buttons placed here -->
+    </main>
+
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="banner" target="_blank">View my code for Guthykins soundboard :)</a>
+    <script>
+var sounds = ['toodles', 'consentisimportant', 'idontknow', 'shutup', 'yes', 'no', 'maybe', 'ilike'];
+var main = document.getElementsByTagName('main')[0];
+for (i in sounds) {
+    var btn = document.createElement('button');
+    btn.textContent = sounds[i].toUpperCase().replace('_', ' ');
+    btn.id = sounds[i];
+
+    main.appendChild(btn);
+}
+
+onclick = function(e) {
+    if (e.target.tagName === 'BUTTON') (new Audio('sounds/' + e.target.id + '.wav')).play();
+}
+    </script>
+</body>
+</html>
